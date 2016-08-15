@@ -1,0 +1,104 @@
+body,html{
+	margin: 0;
+	padding: 0;
+	background-color: #f5f5f5;
+}
+header h4{
+	display: inline-block;
+	color:#fff;
+}
+header span{
+	padding: 0 10px;
+}
+header, footer{
+	color:#fff;
+	padding:0 20px;
+	background-color: #464646;
+}
+
+/* main-container */
+.main-container{
+	padding: 30px;
+    background-color: #fff;
+    float: left;
+    width: 100%;
+}
+.left-section{
+	width: 67%;
+	float: left;
+	display: inline-block;
+	margin-right: 15px;
+}
+.left-section h4{
+	margin: 0;
+}
+.right-section{
+	margin:0 5px;
+	width:26%;
+	padding:0 10px;
+	display: inline-block;
+	color: #fff;
+	background-color:#464646;
+	max-height: 480px;
+    overflow: auto;
+}
+.todays_birthday{
+	margin:20px 0;
+	padding:20px 0;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	background:#464646;
+}
+#birth_anniv{
+	animation: blinker 1s linear infinite;
+}
+@keyframes blinker {  
+  50% { opacity: 0.0; }
+}
+.month{
+	color: #fff;
+	font-size: 20px;
+	display: block;
+	text-align: center;
+	background-color: #464646;
+	padding: 20px;
+}
+#list-of-events{
+	width: 100%;
+	max-height: 330px;
+    overflow: auto;
+}
+#list-of-events table{
+	margin: auto;
+	float: none;
+}
+#list-of-events td,th{
+	padding:0 30px;
+	font-size: 20px;
+}
+.right-section h4{
+	text-align: center;
+}
+.right-section  th{
+	border-bottom:2px solid;
+	font-size: 16px;
+}
+.right-section #list-of-events td, th{
+    padding: 0 30px;
+    text-align: center;
+    line-height: 1.2;
+}
+.right-section tbody td:nth-child(2), td:nth-child(3){
+	text-align: center;
+}
+
+/* Footer */
+footer{
+	text-align: center;
+	padding: 20px;
+	position: absolute;
+	bottom: 0;
+	margin-top:30px;
+	width: 100%;
+}

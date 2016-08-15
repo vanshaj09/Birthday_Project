@@ -1,0 +1,22 @@
+<header ng-controller="mainController">
+	<nav>
+		<span>
+		<h4>Select Event: </h4>
+		<select id="events" ng-model="event" ng-change="update()">
+			<option>Birthday</option>
+			<option>Anniversary</option>
+		</select>
+		</span>
+		|
+		<span>
+		<h4>Select By Month : </h4>
+		<select id="month_change" ng-model="myselect" ng-options="o as o for o in options" ng-change="change_month()"></select>
+		</span>
+		|
+		<span>
+		<h4>Select By User : </h4>
+		<select id="name_change" ng-model="event_name" ng-change="change_name()">
+			<option ng-repeat="user in users">{{user.name}}</option>
+		</select>
+		</span>
+</header>

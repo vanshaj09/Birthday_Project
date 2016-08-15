@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Birthday Project</title>
+	<script type="text/javascript" src="AngulaJS_CDN/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="AngulaJS_CDN/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+
+	<link rel="stylesheet" href="css/bd_css.css">
+
+</head>
+<body ng-app="mainApp">
+	
+	<div ng-include="'template/header.html'"></div>
+	
+	<div ng-controller="mainController" class="main-container">	
+		
+		<div class="left-section">
+			<h4 class="month"><span id="month_event_name">Birthday</span> of <span id="current_month"></span></h4>
+			<div class="todays_birthday">
+				<h4 id="birth_anniv"></h4>
+			</div>
+			<div id="list-of-events">
+			<!-- List of Events month wise -->
+				<table>
+					<thead>
+						<tr>
+							<th>Date</th>
+							<th>Name</th>
+							<th>Event</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="right-section">
+			<h4>Get List of all the Events : <input type="checkbox" ng-model="myblock"></h4>
+			<div ng-show="myblock">
+				<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date</th>
+						<th>Month</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="user in users">
+						<td>{{user.name}}</td> 
+						<td>{{user.dob}}</td>
+						<td>{{user.month}}</td>
+					</tr>
+				</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div ng-include="'template/footer.html'"></div>
+
+</body>
+</html>

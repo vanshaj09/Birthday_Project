@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gadget>
+  <name>Birthday Gadget</name>
+  <version>1.0.0.0</version>
+  <author name="Vanshaj Rai">
+    <logo src="bg-today.gif"/>
+  </author>
+  <description>Birthday Gadget</description>
+  <hosts>
+    <host name="sidebar">
+      <base type="HTML" apiVersion="1.0.0" src="index.html" />
+      <permissions>Full</permissions>
+      <platform minPlatformVersion="1.0" />
+    </host>
+  </hosts>
+</gadget>
