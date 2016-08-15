@@ -12,7 +12,6 @@ var table_iterator = function(arg_record, arg_cm, arg_passed, args_event) {
     $("#birth_anniv").text('');
 
     for (var i = 0; i < arg_record.length; i++) {
-
         if (arg_passed == "update_month") {
             if (arg_cm == arg_record[i].month) {
                 $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " + arg_cm + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
@@ -27,9 +26,8 @@ var table_iterator = function(arg_record, arg_cm, arg_passed, args_event) {
         }
 
         if(arg_passed == "name_change"){
-            if(arg_cm ==  arg_record[i].name){
-                console.log( arg_record[i].name);
-                 $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " + arg_cm + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
+            if(args_event ==  arg_record[i].name){
+                 $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " +  arg_record[i].month + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
             }
         }
 
@@ -94,7 +92,7 @@ var func = function(arg_record, arg_cm, args_event, element) {
             break;
 
         case "change_by_name":
-            table_iterator(arg_record, arg_cm, "name_change");
+            table_iterator(arg_record, arg_cm, "name_change", args_event);
             break;        
     }
 }
@@ -144,7 +142,7 @@ app.controller('mainController', function($scope, myservice, $http) {
 
     $scope.change_name = (function(){ // Change Name
        var updated_name = myservice.change_name();
-       func($scope.users,updated_name,"change_by_name","change_by_name"); 
+       func($scope.users,$scope.options[cm],updated_name,"change_by_name"); 
     });
 });
 
