@@ -1,0 +1,79 @@
+@media only screen and (max-width: 992px) {
+	#list-of-events{
+		max-height: none;
+	}
+	header h4{
+		font-size: 5em;
+		color: #fff;
+		font-size: 1.8em;
+		font-weight: normal;
+		display: block;
+		text-align: center;
+	}
+	header select{
+		width: 100%;
+		font-size: 1.7em;
+		padding: 5px;
+		text-align: center;
+	}
+	header{
+		overflow: hidden;
+		padding-bottom: 30px;
+		margin: 30px;
+		margin-bottom: 0;
+	}
+	.partition{
+		display: none;
+	}
+	footer{
+		clear: both;
+		position: relative;
+		bottom: 0;
+		margin-top:30px;
+	}
+	.body, html{
+		font-size: 1.4em !important;
+	}
+	.left-section, .right-section{
+		width: 100%;
+	}
+	.right-section{
+		padding: 0;
+    	margin: 0;
+		margin-top: 5%;
+		max-height: none;
+	}
+	header input,  input[type="checkbox" i]{
+		height: 32px !important;
+    	width: 6% !important;
+    	animation: blinker 2s linear infinite;
+	}
+	.right-section table{
+		font-size: 1.2em;
+	}
+	.right-section #list-of-events td, th, tr{
+		font-size: 1.2em;
+    	padding: 0 0em;
+    	text-align: center;
+	}
+	.right-section th{
+		font-size: 1.2em;
+		padding: 0 2.7em;
+	}
+	.right-section td{
+		font-size: 1em;
+	}
+	#list-of-events td, th{
+		font-size: 1.2em;
+	}
+	.right-section  tr td{
+		text-align: center;
+	}
+	.right-section h4, .left-section h4{
+		font-size: 1.5em;
+	}
+	#birth_anniv{
+		font-size: 1.8em;
+	}
+
+}
