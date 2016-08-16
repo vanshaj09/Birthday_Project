@@ -23,7 +23,7 @@ header, footer{
     overflow: hidden;
 }
 .left-section{
-	width: 67%;
+	width: 64%;
 	float: left;
 	display: inline-block;
 	margin-right: 15px;
@@ -33,7 +33,7 @@ header, footer{
 }
 .right-section{
 	margin:0 5px;
-	width:26%;
+	width:32%;
 	padding:0 10px;
 	display: inline-block;
 	color: #fff;
@@ -88,7 +88,7 @@ header, footer{
     text-align: center;
     line-height: 1.2;
 }
-.right-section tbody td:nth-child(2), td:nth-child(3){
+.right-section tbody td:nth-child(2), td:nth-child(3), td:nth-child(4){
 	text-align: center;
 }
 

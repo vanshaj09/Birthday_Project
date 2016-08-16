@@ -38,7 +38,7 @@
 		width: 100%;
 	}
 	.right-section{
-		padding: 0;
+		padding: 10px;
     	margin: 0;
 		margin-top: 5%;
 		max-height: none;
@@ -58,16 +58,18 @@
 	}
 	.right-section th{
 		font-size: 1.2em;
-		padding: 0 2.7em;
+		padding: 0 1.29em;
 	}
 	.right-section td{
-		font-size: 1em;
+		font-size: 0.8em;
 	}
 	#list-of-events td, th{
 		font-size: 1.2em;
 	}
 	.right-section  tr td{
 		text-align: center;
+		line-height: 1.4;
+		border: 1px solid;
 	}
 	.right-section h4, .left-section h4{
 		font-size: 1.5em;
