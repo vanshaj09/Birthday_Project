@@ -87,12 +87,13 @@
 		width: 80%;
 		top: 32%;
 		left: 8%;
-		height: 400px;
+		height: 470px;
   	}
   	.login input{
 	  	padding: 10px;
 	  	width: 80%;
 	    font-size: 30px;
+	    padding-bottom: 20px;
 	  }
 
 }
