@@ -1,6 +1,7 @@
 body,html{
 	margin: 0;
 	padding: 0;
+	position: relative;
 	background-color: #f5f5f5;
 }
 header h4{
@@ -23,22 +24,19 @@ header, footer{
     overflow: hidden;
 }
 .left-section{
-	width: 64%;
-	float: left;
-	display: inline-block;
+	display: block;
 	margin-right: 15px;
 }
 .left-section h4{
 	margin: 0;
 }
 .right-section{
-	margin:0 5px;
-	width:32%;
+	margin:40px 0;
 	padding:0 10px;
-	display: inline-block;
+	display: block;
 	color: #fff;
 	background-color:#464646;
-	max-height: 480px;
+	max-height: 440px;
     overflow: auto;
 }
 .todays_birthday{
@@ -73,32 +71,76 @@ header, footer{
 	float: none;
 }
 #list-of-events td,th{
-	padding:0 30px;
-	font-size: 20px;
+	font-size: 17px;
 }
 .right-section h4{
 	text-align: center;
 }
+.left-section th{
+	background-color: #464646;
+	color: #fff;
+	font-size: 1.2em;
+}
 .right-section  th{
 	border-bottom:2px solid;
-	font-size: 16px;
+	background: #fff;
+	color: #000;
 }
 .right-section #list-of-events td, th{
-    padding: 0 30px;
     text-align: center;
     line-height: 1.2;
+    border:1px solid #464646;
 }
-.right-section tbody td:nth-child(2), td:nth-child(3), td:nth-child(4){
+.right-section tbody td, .left-section tbody td{
 	text-align: center;
+	border:1px solid #464646;
+}
+.right-section tbody td:nth-child(1), .left-section tbody td:nth-child(1){
+	width: 20%;
+}
+.right-section tbody td:nth-child(2), .left-section tbody td:nth-child(2){
+	padding: 0;
 }
 
 /* Footer */
 footer{
 	text-align: center;
 	padding: 20px;
-	position: absolute;
-	bottom: 0;
-	margin-top:30px;
-	left: 0;
-	right: 0;
+}
+
+
+.login {
+	position: fixed;
+    padding: 20px 20px 20px;
+    width: 410px;
+    background: white;
+    border-radius: 3px;
+    top: 25%;
+    left: 34%;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    text-align: center;
+    background: #20aae5;
+    z-index: 9;
+  }
+  .login input{
+  	padding: 10px;
+  	width: 80%;
+  }
+  .login h1{
+  	color: #fff;
+  }
+.opacity-login{
+	background: #000;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#error-msg{
+	color: red;
+	font-weight: 500;
 }

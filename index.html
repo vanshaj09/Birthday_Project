@@ -12,8 +12,21 @@
 
 </head>
 <body ng-app="mainApp">
+
+	<div class="blocker">
+		<div class="opacity-login"></div>
+		<div class="login" ng-controller="loginController">
+	      <h1>Event App</h1>
+	      <p id="error-msg"></p>
+	      <form>
+	        <p><input type="text" name="login" value="" placeholder="Username or Email" ng-model="username"></p>
+	        <p><input type="password" name="password" value="" placeholder="Password" ng-model="password"></p><br>
+	        <input type="button" ng-click="click_me()" value="Click">
+	      </form>
+	    </div>
+	</div>
 	
-	<div ng-include="'template/header.html'"></div>
+	<div ng-include="'template/header.html'" class="header-section"></div>
 	
 	<div ng-controller="mainController" class="main-container">	
 		
@@ -27,8 +40,11 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Date</th>
 							<th>Name</th>
+							<th>Date</th>
+							<th>Contact</th>
+							<th>Whatsapp</th>
+							<th>Email</th>
 							<th>Event</th>
 						</tr>
 					</thead>
@@ -45,16 +61,20 @@
 					<tr>
 						<th>Name</th>
 						<th>Date</th>
-						<th>Month</th>
-						<th>Occasion</th>
+						<th>Contact</th>
+						<th>Whatsapp</th>
+						<th>Email</th>
+						<th>Event</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="user in users">
 						<td>{{user.name}}</td> 
-						<td>{{user.dob}}</td>
-						<td>{{user.month}}</td>
-						<td>{{user.event}}</td>
+						<td>{{user.date}}</td>
+						<td>{{user.contact_no }}</td>
+						<td>{{user.whatsapp}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.event | uppercase}}</td>
 					</tr>
 				</tbody>
 				</table>

@@ -6,42 +6,50 @@ var cd = ndate.getDate();
 var change_event;
 var change_month;
 var change_name;
+var un = "admin"
+
 
 var table_iterator = function(arg_record, arg_cm, arg_passed, args_event) {
     $("#list-of-events table tbody tr").remove();
     $("#birth_anniv").text('');
+    arg_cm_truc = arg_cm.substring(3,length);
 
     for (var i = 0; i < arg_record.length; i++) {
+       
+        var date = arg_record[i].date;
+        var split_value = date.split('-');
+
+
         if (arg_passed == "update_month") {
-            if (arg_cm == arg_record[i].month) {
-                $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " + arg_cm + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
+            if (arg_cm_truc == split_value[1]) {
+                $("#list-of-events table tbody")
+                .append("<tr><td>" + arg_record[i].name + "</td><td>" + arg_record[i].date + "</td><td>" + arg_record[i].contact_no +  "</td><td>" + arg_record[i].whatsapp + "</td><td>" + arg_record[i].email  + "</td><td>" + arg_record[i].event + "</td></tr>");
             }
-            if (arg_cm == arg_record[i].month) {
-                if (cd == arg_record[i].dob) {
+            if (arg_cm_truc == split_value[1]) {
+                if (cd == split_value[0]) {
                     $("#birth_anniv").append("<div>Hi, Today is <span>" + arg_record[i].event + "</span> of <span>" + arg_record[i].name + "</span></div>")
-                } else {
-                    $("#birth_anniv").html('No Event !!')
                 }
             }
+
         }
 
         if(arg_passed == "name_change"){
             if(args_event ==  arg_record[i].name){
-                 $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " +  arg_record[i].month + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
+                 $("#list-of-events table tbody")
+                   .append("<tr><td>" + arg_record[i].name + "</td><td>" + arg_record[i].date + "</td><td>" + arg_record[i].contact_no +  "</td><td>" + arg_record[i].whatsapp + "</td><td>" + arg_record[i].email  + "</td><td>" + arg_record[i].event + "</td></tr>");
             }
         }
 
 
-
         if (arg_passed == "normal") {
-            if (arg_cm == arg_record[i].month) {
-                $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " + arg_cm + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
+               
+            if (arg_cm_truc == split_value[1]) {
+                $("#list-of-events table tbody")
+                 .append("<tr><td>" + arg_record[i].name + "</td><td>" + arg_record[i].date + "</td><td>" + arg_record[i].contact_no +  "</td><td>" + arg_record[i].whatsapp + "</td><td>" + arg_record[i].email  + "</td><td>" + arg_record[i].event + "</td></tr>");
             }
-            if (arg_cm == arg_record[i].month) {
-                if (cd == arg_record[i].dob) {
-                    $("#birth_anniv").append("<div>Hi, Today is <span>" + arg_record[i].event + "</span> of <span>" + arg_record[i].name + "</span></div>")
-                } else {
-                    $("#birth_anniv").html('No Event !!')
+            if (arg_cm_truc == split_value[1]) {
+                if (cd == split_value[0]) {
+                    $("#birth_anniv").append("<div>Hi, Today is <span>" + arg_record[i].event + "</span> of &nbsp<span>" + arg_record[i].name + "</span></div>");
                 }
             }
         }
@@ -50,25 +58,24 @@ var table_iterator = function(arg_record, arg_cm, arg_passed, args_event) {
             console.log("Passed : " + args_event)
             if (args_event == 'Birthday') {
                 if (arg_record[i].event == 'birthday') {
-                    $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " + arg_record[i].month + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
+                    $("#list-of-events table tbody")
+                     .append("<tr><td>" + arg_record[i].name + "</td><td>" + arg_record[i].date + "</td><td>" + arg_record[i].contact_no +  "</td><td>" + arg_record[i].whatsapp + "</td><td>" + arg_record[i].email  + "</td><td>" + arg_record[i].event + "</td></tr>");
                 }
-                if (arg_cm == arg_record[i].month) {
-                    if (cd == arg_record[i].dob) {
+              if (arg_cm_truc == split_value[1]) {
+                if (cd == split_value[0]) {
+                    $(".todays_birthday").show();
                         $("#birth_anniv").append("<div>Hi, Today is <span>" + arg_record[i].event + "</span> of <span>" + arg_record[i].name + "</span></div>")
-                    } else {
-                        $("#birth_anniv").html('No Event !!')
                     }
                 }
             }
             if (args_event == 'Anniversary') {
                 if (arg_record[i].event == 'anniversary') {
-                    $("#list-of-events table tbody").append("<tr><td>" + arg_record[i].dob + " - " + arg_record[i].month + "</td><td>" + arg_record[i].name + "</td><td>" + arg_record[i].event + "</td></tr>");
+                    $("#list-of-events table tbody")
+                    .append("<tr><td>" + arg_record[i].name + "</td><td>" + arg_record[i].date + "</td><td>" + "</td><td></td><td></td><td>" + arg_record[i].event + "</td></tr>");
                 }
-                if (arg_cm == arg_record[i].month) {
-                    if (cd == arg_record[i].dob) {
+                if (arg_cm_truc == split_value[1]) {
+                    if (cd == split_value[0]) {
                         $("#birth_anniv").append("<div>Hi, Today is <span>" + arg_record[i].event + "</span> of <span>" + arg_record[i].name + "</span></div>")
-                    } else {
-                        $("#birth_anniv").html('No Event !!')
                     }
                 }
             }
@@ -115,6 +122,22 @@ app.service('myservice', function() {
     }
 });
 
+app.controller('loginController', function($scope) {
+    $(".main-container, .header-section").hide();
+    $scope.pass = "pw_vansh";
+    $scope.click_me = function(){
+        if($scope.username == "admin" && $scope.password == $scope.pass ){
+            $(".blocker").hide();
+            $(".main-container, .header-section").show();
+        }
+        else{
+         $("#error-msg").html('Login failed, Please Try Again !')  
+        }
+        
+    }
+
+});
+
 
 app.controller('mainController', function($scope, myservice, $http) {
 
@@ -148,25 +171,25 @@ app.controller('mainController', function($scope, myservice, $http) {
 
 // /*Providers*/
 // app.provider('dateProvider',function(){
-// 	return{
-// 		$get : function(){
-// 			return{
-// 				showDate : function(){
-// 					var showTime = new Date();
-// 					if(showTime.getHours() > 5 && showTime.getHours() < 12){
-// 						return "Good morning,because its "+showTime.getHours()
-// 					}
-// 					else if(showTime.getHours() > 12 && showTime.getHours() < 16){
-// 						return "Good Afternoon,because its "+showTime.getHours()
-// 					}
-// 					else if(showTime.getHours() > 16 && showTime.getHours() < 21){
-// 						return "Good Evening,because its "+showTime.getHours()
-// 					}
-// 					else{
-// 						return "Good Night,because its "+showTime.getHours()	
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
+//  return{
+//      $get : function(){
+//          return{
+//              showDate : function(){
+//                  var showTime = new Date();
+//                  if(showTime.getHours() > 5 && showTime.getHours() < 12){
+//                      return "Good morning,because its "+showTime.getHours()
+//                  }
+//                  else if(showTime.getHours() > 12 && showTime.getHours() < 16){
+//                      return "Good Afternoon,because its "+showTime.getHours()
+//                  }
+//                  else if(showTime.getHours() > 16 && showTime.getHours() < 21){
+//                      return "Good Evening,because its "+showTime.getHours()
+//                  }
+//                  else{
+//                      return "Good Night,because its "+showTime.getHours()    
+//                  }
+//              }
+//          }
+//      }
+//  }
 // });

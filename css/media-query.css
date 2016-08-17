@@ -19,8 +19,14 @@
 	header{
 		overflow: hidden;
 		padding-bottom: 30px;
-		margin: 30px;
+		margin: 8px;
 		margin-bottom: 0;
+	}
+	.main-container{
+		padding: 8px;
+	}
+	.left-section th{
+		padding: 0 50px;
 	}
 	.partition{
 		display: none;
@@ -46,22 +52,21 @@
 	header input,  input[type="checkbox" i]{
 		height: 32px !important;
     	width: 6% !important;
+    	padding: 50px;
     	animation: blinker 2s linear infinite;
 	}
-	.right-section table{
-		font-size: 1.2em;
-	}
 	.right-section #list-of-events td, th, tr{
-		font-size: 1.2em;
+		font-size: 1.3em;
+		padding: 0 30px;
     	padding: 0 0em;
     	text-align: center;
 	}
 	.right-section th{
-		font-size: 1.2em;
+		font-size: 1.3em;
 		padding: 0 1.29em;
 	}
 	.right-section td{
-		font-size: 0.8em;
+		font-size: 1.2em;
 	}
 	#list-of-events td, th{
 		font-size: 1.2em;
@@ -77,5 +82,17 @@
 	#birth_anniv{
 		font-size: 1.8em;
 	}
+
+	.login {
+		width: 80%;
+		top: 32%;
+		left: 8%;
+		height: 400px;
+  	}
+  	.login input{
+	  	padding: 10px;
+	  	width: 80%;
+	    font-size: 30px;
+	  }
 
 }
